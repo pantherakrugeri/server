@@ -1,0 +1,26 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('pathfinder');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.coreclasses.drop();
+
+// Insert a few documents into the sales collection.
+db.coreclasses.insertMany([
+    {className: "Barbarian", description: "The barbarian is a brutal berserker from beyond the edge of civilized lands."},
+    {className: "Bard", description: "The bard uses skill and spell alike to bolster his allies, confound his enemies, and build upon his fame."},
+    {className: "Cleric", description: "A devout follower of a deity, the cleric can heal wounds, raise the dead, and call down the wrath of the gods."},
+    {className: "Druid", description: "The druid is a worshiper of all things natural – a spellcaster, a friend to animals, and a skilled shapechanger."},
+    {className: "Fighter", description: "Brave and stalwart, the fighter is a master of all manner of arms and armor. And this is a really long description that defeinitely goes over onto another line."},
+    {className: "Monk", description: "A student of martial arts, the monk trains his body to be his greatest weapon and defense."},
+    {className: "Paladin", description: "The paladin is the knight in shining armor, a devoted follower of law and good."},
+    {className: "Ranger", description: "A tracker and hunter, the ranger is a creature of the wild and of tracking down his favored foes."},
+    {className: "Rogue", description: "The barbarian is a brutal berserker from beyond the edge of civilized lands."},
+    {className: "Sorcerer", description: "The spellcasting sorcerer is born with aninnate knack for magic and has strange, eldritch powers."},
+    {className: "Wizard", description: "The wizard masters magic through constant study that gives him incredible magical power."}
+]);

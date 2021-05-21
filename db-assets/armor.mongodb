@@ -1,0 +1,1384 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('pathfinder');
+
+db.getCollectionNames();
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.armor.drop();
+
+// Insert records in armor collection.
+db.armor.insertMany([
+    {
+        "armorName": "Armored kilt*",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 20,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "maximumDexterityBonus": 6,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "10 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Dancing scarves",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 150,
+			"platinum": 0
+		},
+        "armorShieldBonus": "See text",
+        "armorCheckPenalty": 0,
+		"unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "8 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Haramaki",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 3,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "1 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Padded",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 5,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "maximumDexterityBonus": 8,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.05,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "10 lbs.",
+        "source": "PZO1110",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Quilted cloth",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 100,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "maximumDexterityBonus": 8,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.1,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "15 lbs.",
+        "source": "PZO1115",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Reinforced tunic",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.05,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "5 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Silken ceremonial armor",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 30,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "8 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar cuirass",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 15,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.05,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "8 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Leather",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 10,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "maximumDexterityBonus": 6,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.1,
+       "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "15 lbs.",
+        "source": "PZO1110",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Rosewood armor",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "maximumDexterityBonus": 6,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.1,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "15 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Hell Knight leather",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 30,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PRG:AG",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Hide shirt",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 20,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "18 lbs.",
+        "source": "VBoL",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Leaf armor",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 500,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": 0,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "20 lbs.",
+        "source": "PCS:ISWG",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Parade armor",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 25,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "20 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Spider-silk bodysuit",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 850,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 6,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.1,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "4 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Studded leather",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 25,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "20 lbs.",
+        "source": "PZO1110",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Wooden",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 20,
+			"platinum": 0
+		},
+        "armorShieldBonus": 3,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.15,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PZO1115",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Chain shirt",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 100,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.2,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PZO1110",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar (leather)",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 60,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.2,
+        "unencumberedSpeed": {
+			"medium": "30 ft.",
+			"small": "20 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Light",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Armored coat",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.2,
+		"unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "20 lbs.",
+        "source": "PZO1115",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Chain coat",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 75,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 5,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.3,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "40 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Hide",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 15,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": -3,
+        "arcaneSpellFailureChance": 0.2,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PZO1110",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Ice coat",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 80,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.2,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "24 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Do-maru",
+		"cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 200,
+			"platinum": 0
+		},
+        "armorShieldBonus": 5,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "30 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Kikko",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 250,
+			"platinum": 0
+		},
+        "armorShieldBonus": 5,
+        "maximumDexterityBonus": 4,
+        "armorCheckPenalty": -3,
+        "arcaneSpellFailureChance": 0.2,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar (horn)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 100,
+			"platinum": 0
+		},
+        "armorShieldBonus": 5,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "30 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Scale mail",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "armorShieldBonus": 5,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "30 lbs.",
+        "source": "PZO1110",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Breastplate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 200,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "30 lbs.",
+        "source": "PZO1110",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Breastplate (agile)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 400,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "25 lbs.",
+        "source": "PZO1115",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Chainmail",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 150,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 2,
+        "armorCheckPenalty": -5,
+        "arcaneSpellFailureChance": 0.3,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "40 lbs.",
+        "source": "PZO1110",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Four mirror",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 125,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 2,
+        "armorCheckPenalty": -5,
+        "arcaneSpellFailureChance": 0.3,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar (steel)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 150,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -5,
+        "arcaneSpellFailureChance": 0.25,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "35 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Mountain pattern",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 250,
+			"platinum": 0
+		},
+        "armorShieldBonus": 6,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -4,
+        "arcaneSpellFailureChance": 0.3,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "40 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Medium",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Banded mail",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 250,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "35 lbs.",
+        "source": "PZO1110",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Field plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1200,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -5,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PCS:ISWG",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Kusari gusoku",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 350,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar (iron)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 200,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Splint mail",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 200,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PZO1110",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Tatami-do",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1000,
+			"platinum": 0
+		},
+        "armorShieldBonus": 7,
+        "maximumDexterityBonus": 3,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Fortress plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 2100,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "75 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Half-plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 600,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PZO1110",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Half-plate (agile)",
+        "cost": "850 gp","cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 850,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "55 lbs.",
+        "source": "PZO1115",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Hell Knight half-plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 850,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PRG:AG",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Lamellar (stone coat)",
+        "cost": "500 gp","cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 500,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 0,
+        "armorCheckPenalty": -7,
+        "arcaneSpellFailureChance": 0.4,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "O-yoroi",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1700,
+			"platinum": 0
+		},
+        "armorShieldBonus": 8,
+        "maximumDexterityBonus": 2,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "45 lbs.",
+        "source": "PRG:UE",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Full plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1500,
+			"platinum": 0
+		},
+        "armorShieldBonus": 9,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PZO1110",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Gray Maiden plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1500,
+			"platinum": 0
+		},
+        "armorShieldBonus": 9,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PRG:AG",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Hell Knight plate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 2000,
+			"platinum": 0
+		},
+        "armorShieldBonus": 9,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -5,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "50 lbs.",
+        "source": "PCS:ISWG",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Stoneplate",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 1800,
+			"platinum": 0
+		},
+        "armorShieldBonus": 9,
+        "maximumDexterityBonus": 1,
+        "armorCheckPenalty": -6,
+        "arcaneSpellFailureChance": 0.35,
+        "unencumberedSpeed": {
+			"medium": "20 ft.",
+			"small": "15 ft."
+		},
+        "weight": "75 lbs.",
+        "source": "PCS:ISWG",
+        "armorType": "Heavy",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Buckler",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 5,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "5 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Klar",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 12,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "6 lbs.",
+        "source": "PCS:ISWG",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Madu, leather",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 30,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "5 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Madu, steel",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 40,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "6 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, light steel",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 9,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "6 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, light steel (quickdraw)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 59,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "7 lbs.",
+        "source": "PZO1115",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, light wooden",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 3,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "5 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, light wooden (quickdraw)",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 53,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.05,
+        "weight": "6 lbs.",
+        "source": "PZO1115",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, heavy steel",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 20,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "armorCheckPenalty": -2,
+        "arcaneSpellFailureChance": 0.15,
+        "weight": "15 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, heavy wooden",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 7,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "armorCheckPenalty": "–2",
+        "arcaneSpellFailureChance": 0.15,
+        "weight": "10 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, tower",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 30,
+			"platinum": 0
+		},
+        "armorShieldBonus": 4,
+        "maximumDexterityBonus": 2,
+        "armorCheckPenalty": -10,
+        "arcaneSpellFailureChance": 0.5,
+        "weight": "45 lbs.",
+        "source": "PZO1110",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Snarlshield, steel",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "armorCheckPenalty": -3,
+        "arcaneSpellFailureChance": 0.15,
+        "weight": "20 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Snarlshield, wooden",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 37,
+			"platinum": 0
+		},
+        "armorShieldBonus": 2,
+        "armorCheckPenalty": -3,
+        "arcaneSpellFailureChance": 0.15,
+        "weight": "15 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "War-shield, dwarven",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "armorShieldBonus": 1,
+        "armorCheckPenalty": -1,
+        "arcaneSpellFailureChance": 0.2,
+        "weight": "8 lbs.",
+        "source": "PPZO94102",
+        "armorType": "Shield",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Armor spikes",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "weight": "10 lbs.",
+        "source": "PZO1110",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Gauntlet, locked",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 8,
+			"platinum": 0
+		},
+        "armorCheckPenalty": "special",
+        "arcaneSpellFailureChance": "n/a",
+        "weight": "5 lbs.",
+        "source": "PPZO9410",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield boss, breakaway",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 120,
+			"platinum": 0
+		},
+        "weight": "10 lbs.",
+        "source": "PZO9468",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield boss, hooked",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 80,
+			"platinum": 0
+		},
+        "weight": "10 lbs.",
+        "source": "PZO9468",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield boss, illuminating",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 35,
+			"platinum": 0
+		},
+        "weight": "10 lbs.",
+        "source": "PZO9468",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield boss, masterwork",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "source": "PZO9468",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield boss, reinforcing",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 30,
+			"platinum": 0
+		},
+        "weight": "10 lbs.",
+        "source": "PZO9468",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield spikes",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 10,
+			"platinum": 0
+		},
+        "weight": "5 lbs.",
+        "source": "PZO1110",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    },
+    {
+        "armorName": "Shield, throwing",
+        "cost": {
+			"copper": 0,
+			"silver": 0,
+			"gold": 50,
+			"platinum": 0
+		},
+        "source": "UC",
+        "armorType": "Extra",
+        "itemType": "Armor"
+    }
+]);
