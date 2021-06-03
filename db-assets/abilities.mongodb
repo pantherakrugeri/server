@@ -1,0 +1,39 @@
+// Select the database to use.
+use('pathfinder');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+db.abilities.drop();
+
+db.abilities.insertMany([
+    {
+        abilityId: 1,
+        abilityName: "Strength",
+        abilityType: "number",
+    },
+    {
+        abilityId: 2,
+        abilityName: "Dexterity",
+        abilityType: "number",
+    },
+    {
+        abilityId: 3,
+        abilityName: "Constitution",
+        abilityType: "number",
+    },
+    {
+        abilityId: 4,
+        abilityName: "Intelligence",
+        abilityType: "number",
+    },
+    {
+        abilityId: 5,
+        abilityName: "Wisdom",
+        abilityType: "number",
+    },
+    {
+        abilityId: 6,
+        abilityName: "Charisma",
+        abilityType: "number",
+    },
+]);
