@@ -1,7 +1,7 @@
-const Abilities = require("../models/ability-model");
+const AbilityModel = require("../models/ability-model");
 
 getAbilities = async (req, res) => {
-  await Abilities.find({}, (err, abilities) => {
+  await AbilityModel.find({gameSystem: req.query.gamesystem}, (err, abilities) => {
     if (err) {
       return res.status(400).json({ success: false, error: err });
     }

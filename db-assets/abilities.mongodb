@@ -10,30 +10,99 @@ db.abilities.insertMany([
         abilityId: 1,
         abilityName: "Strength",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
     {
         abilityId: 2,
         abilityName: "Dexterity",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
     {
         abilityId: 3,
         abilityName: "Constitution",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
     {
         abilityId: 4,
         abilityName: "Intelligence",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
     {
         abilityId: 5,
         abilityName: "Wisdom",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
     {
         abilityId: 6,
         abilityName: "Charisma",
         abilityType: "number",
+        gameSystem: 'pathfinder'
     },
+    {
+        abilityId: 7,
+        abilityName: "Strength",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 8,
+        abilityName: "Constitution",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 9,
+        abilityName: "Quickness",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 10,
+        abilityName: "Agility",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 11,
+        abilityName: "Intuition",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 12,
+        abilityName: "Empathy",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 13,
+        abilityName: "Memory",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 14,
+        abilityName: "Reasoning",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 15,
+        abilityName: "Presence",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+    {
+        abilityId: 15,
+        abilityName: "Self Discipline",
+        abilityType: "number",
+        gameSystem: 'rolemaster'
+    },
+
 ]);
+
+db.abilities.find( { gameSystem: "rolemaster" } );
