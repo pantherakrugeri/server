@@ -1,7 +1,11 @@
 const AbilityModel = require("../models/ability-model");
 
 getAbilities = async (req, res) => {
-  await AbilityModel.find({gameSystem: req.query.gamesystem}, (err, abilities) => {
+  let lookup = {};
+  if (req.query.gamesystem) {
+    lookup = {gameSystem: req.query.gamesystem};
+  }
+  await AbilityModel.find(lookup, (err, abilities) => {
     if (err) {
       return res.status(400).json({ success: false, error: err });
     }
